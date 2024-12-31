@@ -1,0 +1,58 @@
+﻿@page "/weather"
+@inject IHttpClientFactory HttpClientFactory
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h3 class="text-center">Weather App</h3>
+            <input type="text" @bind="Location" class="form-control mb-3" placeholder="Enter location" />
+            <button @onclick="GetWeather" class="btn btn-primary w-100">Get Weather</button>
+        </div>
+    </div>
+
+    @if (WeatherInfo != null)
+    {
+        <div class="mt-4">
+            <h4>Weather in @WeatherInfo.Name</h4>
+            <p><strong>Temperature:</strong> @WeatherInfo.Main.Temp °C</p>
+            <p><strong>Feels Like:</strong> @WeatherInfo.Main.Feels_Like °C</p>
+            <p><strong>Humidity:</strong> @WeatherInfo.Main.Humidity %</p>
+            <p><strong>Condition:</strong> @WeatherInfo.Weather[0].Description</p>
+        </div>
+    }
+    else if (ErrorMessage != null)
+    {
+        <div class="mt-4 text-danger">@ErrorMessage</div>
+    }
+</div>
+@code {
+    private string Location = "London";
+    private WeatherData? WeatherInfo;
+    private string? ErrorMessage;
+
+    private async Task GetWeather()
+    {
+        try
+        {
+            ErrorMessage = null;
+            var client = HttpClientFactory.CreateClient("BackendApi");
+            var response = await client.GetFromJsonAsync<WeatherData>($"api/weather/{Location}");
+            WeatherInfo = response;
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = "Unable to fetch weather data. Please try again.";
+        }
+    }
+
+    public class WeatherData
+    {
+        public Coord Coord { get; set; }
+        public WeatherDesc[] Weather { get; set; }
+        public Main Main { get; set; }
+        public string Name { get; set; }
+    }
+
+    public class Coord { public double Lon { get; set; } public double Lat { get; set; } }
+    public class WeatherDesc { public string Description { get; set; } }
+    public class Main { public double Temp { get; set; } public double Feels_Like { get; set; } public int Humidity { get; set; } }
+}

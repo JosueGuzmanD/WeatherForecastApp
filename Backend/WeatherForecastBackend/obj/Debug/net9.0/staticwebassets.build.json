@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "NVtaw5/vAtiO8H779cvWR6vco6KP2V0JhZAcm8pbQWI=",
+  "Source": "WeatherForecastBackend",
+  "BasePath": "_content/WeatherForecastBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
