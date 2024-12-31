@@ -38,3 +38,10 @@ yarn.lock
 # React/Next.js specific
 .next/
 out/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.sln.cache
+*.csproj.user
