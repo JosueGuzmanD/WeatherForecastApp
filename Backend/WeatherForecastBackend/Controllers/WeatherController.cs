@@ -1,36 +1,41 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Net.Http.Json;
+using WeatherForecastBackend.Interfaces;
 
 namespace WeatherForecastBackend.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class WeatherController: ControllerBase
+public class WeatherController : ControllerBase
 {
-    private readonly IHttpClientFactory _httpClientFactory;
-    private readonly IConfiguration _configuration;
+    private readonly IWeatherService _weatherService;
 
-    public WeatherController(IHttpClientFactory httpClientFactory, IConfiguration configuration)
+    public WeatherController(IWeatherService weatherService)
     {
-        _httpClientFactory = httpClientFactory;
-        _configuration = configuration;
+        _weatherService = weatherService;
     }
 
-    
-    [HttpGet("{Location}")]
+    [HttpGet("{location}")]
     public async Task<IActionResult> GetWeather(string location)
     {
-        var apiKey = _configuration["OpenWeatherMap:ApiKey"];
-        var client = _httpClientFactory.CreateClient();
-        var response = await client.GetAsync($"https://api.openweathermap.org/data/2.5/weather?q={location}&appid={apiKey}&units=metric");
-
-        if (!response.IsSuccessStatusCode)
+        try
         {
-            return BadRequest("Error fetching weather data.");
-        }
+            var weatherData = await _weatherService.GetWeatherAsync(location);
 
-        var data = await response.Content.ReadAsStringAsync();
-        return Ok(data);
+            if (weatherData == null)
+            {
+                return NotFound("Weather data not found for the specified location.");
+            }
+
+            return Ok(weatherData);
+        }
+        catch (HttpRequestException ex)
+        {
+            return StatusCode(503, $"Service unavailable: {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
     }
-    
-    
 }

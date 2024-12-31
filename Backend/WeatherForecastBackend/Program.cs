@@ -1,11 +1,14 @@
+using WeatherForecastBackend.Interfaces;
+using WeatherForecastBackend.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddOpenApi();
 builder.Services.AddHttpClient();
+builder.Services.AddScoped<IWeatherService, WeatherService>();
 builder.Services.AddControllers();
 
-// Configuración de CORS
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
@@ -21,7 +24,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseCors(); // Aplica la política por defecto de CORS
+    app.UseCors();
     app.MapOpenApi();
 }
 

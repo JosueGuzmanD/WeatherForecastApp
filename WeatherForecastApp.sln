@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{8B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecastFrontend", "Frontend\WeatherForecastFrontend\WeatherForecastFrontend.csproj", "{02B06C38-01A8-4801-918F-8C9996D025CB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecastBackend.Tests", "WeatherForecastBackend.Tests\WeatherForecastBackend.Tests.csproj", "{9C236CC6-2E4E-4D67-B5C3-29A52669991A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,10 @@ Global
 		{02B06C38-01A8-4801-918F-8C9996D025CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02B06C38-01A8-4801-918F-8C9996D025CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02B06C38-01A8-4801-918F-8C9996D025CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C236CC6-2E4E-4D67-B5C3-29A52669991A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C236CC6-2E4E-4D67-B5C3-29A52669991A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C236CC6-2E4E-4D67-B5C3-29A52669991A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C236CC6-2E4E-4D67-B5C3-29A52669991A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9D5DF630-F1B2-4475-9C06-E9E94DA6CBEF} = {CDBB069C-2AEF-4E7E-9705-9BB026585CD4}
