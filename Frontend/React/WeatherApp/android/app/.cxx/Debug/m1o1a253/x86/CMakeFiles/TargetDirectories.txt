@@ -1,0 +1,3 @@
+E:/Repos/WeatherForecastApplication/Frontend/React/WeatherApp/android/app/.cxx/Debug/m1o1a253/x86/CMakeFiles/appmodules.dir
+E:/Repos/WeatherForecastApplication/Frontend/React/WeatherApp/android/app/.cxx/Debug/m1o1a253/x86/CMakeFiles/edit_cache.dir
+E:/Repos/WeatherForecastApplication/Frontend/React/WeatherApp/android/app/.cxx/Debug/m1o1a253/x86/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,10 @@
+# ninja log v5
+30	133	0	E:/Repos/WeatherForecastApplication/Frontend/React/WeatherApp/android/app/.cxx/Debug/m1o1a253/arm64-v8a/CMakeFiles/cmake.verify_globs	95596467d6c47560
+2	12802	7572171264120802	CMakeFiles/appmodules.dir/4cb5427b006e3186f1d221aee133e601/WeatherApp/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	23d5ec77d1ad2252
+17	13254	7572171269777723	CMakeFiles/appmodules.dir/OnLoad.cpp.o	b374d5c1bbf6eb3a
+13254	13720	7572171274732072	E:/Repos/WeatherForecastApplication/Frontend/React/WeatherApp/android/app/build/intermediates/cxx/Debug/m1o1a253/obj/arm64-v8a/libappmodules.so	d92d02142e362d36
+134	732	7572950941400824	build.ninja	928a2f88dd3a115e
+1	18	0	E:/Repos/WeatherForecastApplication/Frontend/React/WeatherApp/android/app/.cxx/Debug/m1o1a253/arm64-v8a/CMakeFiles/cmake.verify_globs	95596467d6c47560
+35	7359	7572951015819210	CMakeFiles/appmodules.dir/4cb5427b006e3186f1d221aee133e601/WeatherApp/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	23d5ec77d1ad2252
+48	7772	7572951020009053	CMakeFiles/appmodules.dir/OnLoad.cpp.o	b374d5c1bbf6eb3a
+7772	8242	7572951024764197	E:/Repos/WeatherForecastApplication/Frontend/React/WeatherApp/android/app/build/intermediates/cxx/Debug/m1o1a253/obj/arm64-v8a/libappmodules.so	d92d02142e362d36
